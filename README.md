@@ -5,5 +5,5 @@ This is a very simple REST API that wraps the PowerPanel pwrstat application for
 # Usage
 
   - Must have Linux PowerPanel application from CyberPower already installed (https://www.cyberpowersystems.com/product/software/powerpanel-for-linux/)
-  - Access JSON response at http://0.0.0.0/pwrstat
+  - Access JSON response at http://0.0.0.0:5002/pwrstat
 
