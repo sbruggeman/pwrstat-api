@@ -9,6 +9,6 @@ services:
     image: ups_status #Image name of built image, change to your liking.
     devices:
       - /dev/bus/usb:/dev/bus/usb 
-    privileged: true #Required for USB communication, as it will be unable to reach UPS otherwise, even with "devices" mode above.
+    privileged: true #Required for USB communication, as it will be unable to reach UPS otherwise, even with "devices" mode above. Possible Docker bug.
     ports:
       - 5002:5002 #Can change external port to port of your choosing, such as 5000, ie: 5000:5002.
