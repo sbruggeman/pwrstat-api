@@ -1,0 +1,14 @@
+version: '2.1'
+services:
+  upsstatus: #Service name, change to your liking
+    container_name: ups_status #Change name to your liking.
+    restart: always
+    build: 
+      context: /<path to>/pwrstat-api #This needs updated to the location of pwrstat-api on your computer.
+      dockerfile: dockerfile
+    image: ups_status #Image name of built image, change to your liking.
+    devices:
+      - /dev/bus/usb:/dev/bus/usb 
+    privileged: true #Required for USB communication, as it will be unable to reach UPS otherwise, even with "devices" mode above.
+    ports:
+      - 5002:5002 #Can change external port to port of your choosing, such as 5000, ie: 5000:5002.
