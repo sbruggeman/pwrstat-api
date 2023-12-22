@@ -1,8 +1,9 @@
-FROM python:3-bookworm
+FROM python:3-stretch
 
 VOLUME /src
-COPY pwrstat-api.py download-helper.py requirements.txt /src/
+COPY pwrstat-api.py download-helper.py requirements.txt init.sh /src/
 WORKDIR /src
+RUN chmod +x /src/init.sh
 RUN chmod +x /src/pwrstat-api.py
 RUN chmod +x /src/download-helper.py
 
@@ -22,4 +23,4 @@ RUN python3 /src/download-helper.py
 RUN pip install --trusted-host pypi.python.org -r requirements.txt
 
 RUN dpkg -i *.${DISTRO}
-ENTRYPOINT /etc/init.d/pwrstatd start && /src/pwrstat-api.py
+ENTRYPOINT "/src/init.sh"
