@@ -36,7 +36,7 @@ for match in matches:
     found_matches.append(match)
 
 if len(found_matches) == 1:
-    pattern_search_url = '"https://.*?cloudfront.net\/software\/' + found_matches[0] + '"'
+    pattern_search_url = '\"https://[A-z0-9]+\.cloudfront\.net\/software\/' + found_matches[0] + '\"'
     pattern_search_url=re.compile(r'' + pattern_search_url)
     matches_url=pattern_search_url.findall(downloaded_source)
     found_url_matches=[]
