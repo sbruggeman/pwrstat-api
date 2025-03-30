@@ -1,4 +1,4 @@
-FROM python:3-stretch
+FROM python:3.13-bookworm
 MAINTAINER Steve Bruggeman
 
 VOLUME /src

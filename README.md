@@ -2,6 +2,10 @@
 
 This is a very simple REST API that wraps the PowerPanel pwrstat application for CyberPower uninterruptible power supplies. Only basic GET support for a single JSON object response for all parameters of the UPS are implemented.
 
+## Important Note!
+
+The latest versions of this container disable the auto turn off features for power failure and low battery that is configured by default for pwrstat. 
+
 # Usage
 
 ## Using pre-built Docker Image
