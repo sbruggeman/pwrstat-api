@@ -13,7 +13,6 @@ The latest versions of this container disable the auto turn off features for pow
 
 ## Building Manually
   - Clone GitHub repo to local computer.
-  - Must have Linux PowerPanel application from CyberPower already downloaded (https://www.cyberpowersystems.com/product/software/powerpanel-for-linux/)
-  - Place powerpanel_ver_amd64.deb OR PPL-*-64bit.deb (newer) file downloaded from above address in the folder containing this README, on your local computer.
+  - PowerPanel binary is automatically downloaded on build.
   - Run Docker build, or use [docker-compose.yaml](build-example-docker-compose.yaml), the included Docker-Compose example. 
   - Access JSON response at http://<docker host IP>:5002/pwrstat
