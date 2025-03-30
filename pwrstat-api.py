@@ -5,9 +5,11 @@ from flask_restful import Resource, Api
 from json import dumps
 from flask_jsonpify import jsonify
 import subprocess
+import os
 
 app = Flask(__name__)
 api = Api(app)
+app_port = os.environ['PORT']
 
 class pwrstat(Resource):
     def get(self):
@@ -30,4 +32,4 @@ class pwrstat(Resource):
 api.add_resource(pwrstat, '/pwrstat') # return all parameters
 
 if __name__ == '__main__':
-     app.run(port=5002, host='0.0.0.0')
+     app.run(port=app_port, host='0.0.0.0')

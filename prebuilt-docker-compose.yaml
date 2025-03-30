@@ -1,0 +1,14 @@
+services:
+  pwrstat-api: #Service name, change to your liking
+    container_name: pwrstat-api #Change name to your liking.
+    restart: always
+    image: netsamurai/pwrstat-api:latest # Image name of built image, change to your liking.
+    environment:
+      - PORT=5002
+      - DISTRO=deb #not yet implemented
+      - ARCHITECTURE=64 #not yet implemented
+    devices:
+      - /dev/bus/usb:/dev/bus/usb 
+    privileged: true # Required for USB communication, as it will be unable to reach UPS otherwise, even with "devices" mode above. Possible Docker bug.
+    ports:
+      - 5002:5002 #Can change external port to port of your choosing, such as 5000, ie: 5000:5002.
