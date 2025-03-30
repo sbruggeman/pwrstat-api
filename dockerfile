@@ -1,5 +1,5 @@
 FROM python:3-stretch
-MAINTAINER Daniel Winks
+MAINTAINER Steve Bruggeman
 
 VOLUME /src
 COPY pwrstat-api.py requirements.txt powerpanel_*_amd64.deb init.sh /src/
