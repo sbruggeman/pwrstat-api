@@ -1,4 +1,5 @@
 FROM python:3-stretch
+MAINTAINER Steve Bruggeman
 
 VOLUME /src
 COPY pwrstat-api.py download-helper.py requirements.txt init.sh /src/
